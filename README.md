@@ -29,4 +29,4 @@ Example projects for ICT students at University of Phayao
 * [MariaDB or MySQL](https://downloads.mariadb.org/f/mariadb-10.2.7/winx64-packages/mariadb-10.2.7-winx64.msi/from/http%3A//mirrors.neusoft.edu.cn/mariadb/?serve)
 * [HeidiSQL](https://www.heidisql.com/installers/HeidiSQL_9.4.0.5125_Setup.exe)
 * [Apache Tomcat 8](http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.0.45/bin/apache-tomcat-8.0.45-windows-x64.zip)
-* [MySQL Sample Database] (https://github.com/datacharmer/test_db)
+* [MySQL Sample Database](https://github.com/datacharmer/test_db)
