@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<mapping class="spring.demo.model.Member" />
+		<mapping class="spring.demo.model.Zipcodes" />
+		<mapping class="spring.demo.model.Geography" />
+		<mapping class="spring.demo.model.Provinces" />
+		<mapping class="spring.demo.model.Amphures" />
+		<mapping class="spring.demo.model.Districts" />
+	</session-factory>
+</hibernate-configuration>

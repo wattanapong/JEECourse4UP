@@ -1,0 +1,80 @@
+@font-face {
+	font-family: 'DB-Adman-X';
+	src: url('../fonts/DB-Adman-X.eot');
+	src: url('../fonts/DB-Adman-X.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/DB-Adman-X.woff') format('woff'),
+		url('../fonts/DB-Adman-X.ttf') format('truetype'),
+		url('../fonts/DB-Adman-X.svg#DB-Adman-X') format('svg');
+}
+
+body {
+	padding-top: 50px;
+}
+
+.section-bg {
+	background-image: url(../img/bg-section.png);
+	padding: 30px 0;
+	text-align: center;
+	color: white;
+	height: 100%;
+	background-position: center;
+	background-repeat: repeat;
+}
+
+.section-bg2 {
+	background-color: #22A7F0;
+	padding: 45px 0;
+	color: white;
+	width: 100%;
+	text-align: center;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.homepage-title {
+	font-weight: 1000;
+	line-height: 50px;
+	padding: 0 15px;
+	letter-spacing: 2px;
+	margin-bottom: 0px;
+}
+
+.homepage-subtitle {
+	font-weight: 1000;
+	line-height: 40px;
+	padding: 0 15px;
+	letter-spacing: 1px;
+}
+
+.homepage-subtitle-col {
+	font-size: 18px;
+	letter-spacing: -0px;
+	color: white;
+}
+
+.homepage-subtitle, .homepage-title {
+	background: rgba(97, 94, 91, .5);
+	color: white;
+	display: inline-block;
+}
+
+.icon {
+	width: 300px;
+	height: auto;
+	margin-top: 10px;
+	display: inline-block !important;
+}
+
+.icon.icon-spring-logo-big {
+	width: 154px;
+	height: 154px;
+	background-position: 154px 191px;
+}
+
+.footer {
+	padding-top: 20px;
+	padding-bottom: 15px;
+	background-color: #003171;
+	margin-top: 0px;
+	text-align: center;
+}

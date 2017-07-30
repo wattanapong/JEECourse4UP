@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 13, 2015 12:01:45 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+	<class name="com.spring.model.Employees" table="employees"
+		catalog="employees" optimistic-lock="version">
+		<id name="empNo" type="java.lang.Integer">
+			<column name="emp_no" />
+			<generator class="identity" />
+		</id>
+		<property name="user" type="string">
+			<column name="user" length="50" not-null="true" />
+		</property>
+		<property name="pass" type="string">
+			<column name="pass" length="50" not-null="true" />
+		</property>
+		<property name="birthDate" type="date">
+			<column name="birth_date" length="10" />
+		</property>
+		<property name="firstName" type="string">
+			<column name="first_name" length="14" />
+		</property>
+		<property name="lastName" type="string">
+			<column name="last_name" length="16" />
+		</property>
+		<property name="gender" type="string">
+			<column name="gender" length="2" />
+		</property>
+		<property name="hireDate" type="date">
+			<column name="hire_date" length="10" />
+		</property>
+		<set name="titleses" table="titles" inverse="true" lazy="true"
+			fetch="select">
+			<key>
+				<column name="emp_no" not-null="true" />
+			</key>
+			<one-to-many class="com.spring.model.Titles" />
+		</set>
+		<set name="salarieses" table="salaries" inverse="true" lazy="true"
+			fetch="select">
+			<key>
+				<column name="emp_no" not-null="true" />
+			</key>
+			<one-to-many class="com.spring.model.Salaries" />
+		</set>
+		<set name="deptEmps" table="dept_emp" inverse="true" lazy="true"
+			fetch="select">
+			<key>
+				<column name="emp_no" not-null="true" />
+			</key>
+			<one-to-many class="com.spring.model.DeptEmp" />
+		</set>
+		<set name="deptManagers" table="dept_manager" inverse="true" lazy="true"
+			fetch="select">
+			<key>
+				<column name="emp_no" not-null="true" />
+			</key>
+			<one-to-many class="com.spring.model.DeptManager" />
+		</set>
+	</class>
+</hibernate-mapping>

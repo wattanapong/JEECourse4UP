@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 14, 2016 2:12:24 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="ch5.model.Departments" table="departments" catalog="employees" optimistic-lock="version">
+        <id name="deptNo" type="string">
+            <column name="dept_no" length="4" />
+            <generator class="assigned" />
+        </id>
+        <property name="deptName" type="string">
+            <column name="dept_name" length="40" not-null="true" unique="true" />
+        </property>
+        <set name="deptEmps" table="dept_emp" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dept_no" length="4" not-null="true" />
+            </key>
+            <one-to-many class="ch5.model.DeptEmp" />
+        </set>
+        <set name="deptManagers" table="dept_manager" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dept_no" length="4" not-null="true" />
+            </key>
+            <one-to-many class="ch5.model.DeptManager" />
+        </set>
+    </class>
+</hibernate-mapping>

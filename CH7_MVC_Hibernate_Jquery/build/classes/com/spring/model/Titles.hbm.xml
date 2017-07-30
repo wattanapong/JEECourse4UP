@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 13, 2015 12:01:45 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+	<class name="com.spring.model.Titles" table="titles" catalog="employees"
+		optimistic-lock="version">
+		<composite-id name="id" class="com.spring.model.TitlesId">
+			<key-property name="empNo" type="int">
+				<column name="emp_no" />
+			</key-property>
+			<key-property name="title" type="string">
+				<column name="title" length="50" />
+			</key-property>
+			<key-property name="fromDate" type="date">
+				<column name="from_date" length="10" />
+			</key-property>
+		</composite-id>
+		<many-to-one name="employees" class="com.spring.model.Employees"
+			update="false" insert="false" fetch="select">
+			<column name="emp_no" not-null="true" />
+		</many-to-one>
+		<property name="toDate" type="date">
+			<column name="to_date" length="10" />
+		</property>
+	</class>
+</hibernate-mapping>

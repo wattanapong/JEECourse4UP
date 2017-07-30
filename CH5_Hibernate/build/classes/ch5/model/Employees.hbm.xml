@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 14, 2016 2:12:24 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="ch5.model.Employees" table="employees" catalog="employees" optimistic-lock="version">
+        <id name="empNo" type="int">
+            <column name="emp_no" />
+            <generator class="assigned" />
+        </id>
+        <property name="pass" type="string">
+            <column name="pass" length="50" not-null="true" />
+        </property>
+        <property name="birthDate" type="date">
+            <column name="birth_date" length="10" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="first_name" length="14" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="last_name" length="16" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="2" />
+        </property>
+        <property name="hireDate" type="date">
+            <column name="hire_date" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>
