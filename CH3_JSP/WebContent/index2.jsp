@@ -5,7 +5,7 @@
 <jsp:useBean id="mysql" class="com.jee.ch3.MySQL"></jsp:useBean>
 <% 
 	mysql = new MySQL();
-	if ( mysql.connect("localhost","", "employees", "jspuser", "jsp2016") ){
+	if ( mysql.connect("localhost","", "employees", "jspuser", "jsp2017") ){
 		mysql.Query("SELECT * FROM employees");	
 	}
 %>

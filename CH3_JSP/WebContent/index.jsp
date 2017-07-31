@@ -6,9 +6,9 @@
 	pageEncoding="UTF-8"%>
 <%
 	Class.forName("com.mysql.jdbc.Driver");
-	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/employees", "jspuser", "jsp2016");
+	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/employees", "jspuser", "jsp2017");
 	Statement st = conn.createStatement();
-	ResultSet rs = st.executeQuery("SELECT * FROM employees");
+	ResultSet rs = st.executeQuery("SELECT * FROM employees LIMIT 0,1000");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

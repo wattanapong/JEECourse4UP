@@ -10,7 +10,7 @@
 </head>
 <body>
 	<sql:setDataSource var="query" driver="com.mysql.jdbc.Driver"
-		url="jdbc:mysql://localhost/employees" user="root" password="" />
+		url="jdbc:mysql://localhost/employees" user="jspuser" password="jsp2017" />
 
 	<c:set var="sql" value="SELECT * from employees limit 0,20" />
 

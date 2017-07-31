@@ -14,7 +14,7 @@ Pass : ${param.pass }<br>
 User from JSP Tag : <%=request.getParameter("user") %> <br>
 <%
 String user = request.getParameter("user");
-if (user.equals("admin")) response.getWriter().println("Welcome");
+if ( user != null && user.equals("admin")) response.getWriter().println("Welcome");
 else response.getWriter().println("Fail");
 %>
 <hr>
