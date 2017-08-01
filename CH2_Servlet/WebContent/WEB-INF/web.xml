@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-  
   <servlet>
     <servlet-name>JEECourse</servlet-name>
     <servlet-class>DemoServlet</servlet-class>
-  <!--   <load-on-startup>0</load-on-startup> -->
   </servlet>
-  
   <servlet>
     <servlet-name>ServletMultiple</servlet-name>
     <servlet-class>DemoServlet2</servlet-class>
-<!--     <load-on-startup>1</load-on-startup> -->
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>JEECourse</servlet-name>
     <url-pattern>/welcome</url-pattern>
   </servlet-mapping>
-  
   <servlet-mapping>
     <servlet-name>ServletMultiple</servlet-name>
     <url-pattern>/multiple</url-pattern>
   </servlet-mapping>
-  
   <welcome-file-list>
     <welcome-file>home.html</welcome-file>
     <welcome-file>default.html</welcome-file>
