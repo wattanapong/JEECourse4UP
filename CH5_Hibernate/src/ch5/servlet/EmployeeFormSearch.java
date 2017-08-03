@@ -43,11 +43,7 @@ public class EmployeeFormSearch extends HttpServlet {
 				gender = request.getParameter("gender");
 		
 		try {
-			this.Connect();
-			
-			Query query = s.createQuery("select count(*) from Employees");
-			long size = (long) query.uniqueResult();
-			
+			this.Connect();			
 			
 			Criteria criteria = s.createCriteria(Employees.class);
 			if (firstname != null) criteria.add(Restrictions.like("firstName", firstname,MatchMode.ANYWHERE ));
@@ -55,11 +51,12 @@ public class EmployeeFormSearch extends HttpServlet {
 			if (gender != null && !gender.equals("ALL")) criteria.add(Restrictions.eq("gender", gender));
 			
 			List employees = criteria.list();
-			request.setAttribute("size", employees.size() );
+			long size = employees.size();//(long) criteria.uniqueResult();
+			request.setAttribute("size", size );//
 			
-			criteria.setFirstResult(0);
-			criteria.setMaxResults(20);
-			employees = criteria.list();
+			//criteria.setFirstResult(0);
+			//criteria.setMaxResults(20);
+			//List employees = criteria.list();
 			request.setAttribute("employees", employees );
 			
 		} catch (Exception e) {
