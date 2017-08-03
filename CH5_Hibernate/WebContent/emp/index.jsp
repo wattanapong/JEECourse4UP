@@ -13,7 +13,7 @@
  
 <div>Found ${size} employees</div>
 
-<form>
+<form method="post" action="formSearch">
 <table>
 <thead>
 <tr><td>EmpNo.</td><td>Firstname</td><td>LastName</td><td>Gender</td></tr>
@@ -21,7 +21,7 @@
 	<td><input type="text" name="empno"></td>
 	<td><input type="text" name="firstname"></td>
 	<td><input type="text" name="lastname"></td>
-	<td><select name="gender"><option value="M">male</option><option value="F">female</option></select></td>
+	<td><select name="gender"><option value="ALL">all</option><option value="M">male</option><option value="F">female</option></select></td>
 </tr>
 </thead>
 

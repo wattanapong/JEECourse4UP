@@ -16,6 +16,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Expression;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.service.ServiceRegistry;
 
@@ -44,17 +45,23 @@ public class EmployeeFormSearch extends HttpServlet {
 		try {
 			this.Connect();
 			
+			Query query = s.createQuery("select count(*) from Employees");
+			long size = (long) query.uniqueResult();
+			
+			
 			Criteria criteria = s.createCriteria(Employees.class);
-			if (firstname != null) criteria.add(Restrictions.like("firstName", "%"+firstname+"%"));
+			if (firstname != null) criteria.add(Restrictions.like("firstName", firstname,MatchMode.ANYWHERE ));
 			if (lastname != null) criteria.add(Restrictions.like("lastName", "%"+lastname+"%"));
 			if (gender != null && !gender.equals("ALL")) criteria.add(Restrictions.eq("gender", gender));
-			//if (empno != null) criteria.add(Restrictions.eq("empNo", empno));
+			
+			List employees = criteria.list();
+			request.setAttribute("size", employees.size() );
+			
 			criteria.setFirstResult(0);
 			criteria.setMaxResults(20);
-			List employees = criteria.list();
-			
+			employees = criteria.list();
 			request.setAttribute("employees", employees );
-			request.setAttribute("size", employees.size());
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

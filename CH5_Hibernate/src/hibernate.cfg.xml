@@ -4,11 +4,10 @@
 <hibernate-configuration>
  <session-factory name="">
   <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-  <property name="hibernate.connection.password">jsp2016</property>
+  <property name="hibernate.connection.password">jsp2017</property>
   <property name="hibernate.connection.url">jdbc:mysql://localhost/employees</property>
   <property name="hibernate.connection.username">jspuser</property>
   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
   <mapping class="ch5.model.Employees" resource="ch5/model/Employees.hbm.xml"/>
-
  </session-factory>
 </hibernate-configuration>

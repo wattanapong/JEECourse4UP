@@ -28,9 +28,17 @@ public class EmployeeDemo extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int id = Integer.parseInt(request.getParameter("id"));
-		this.Connect();
-		Employees emp = (Employees) s.get(Employees.class, id);
+		
+		int id;
+		Employees emp;
+		try {
+			id = Integer.parseInt(request.getParameter("id"));
+			this.Connect();
+			emp = (Employees) s.get(Employees.class, id);
+		} catch (NumberFormatException e) {
+			emp = null;
+		}
+		
 		request.setAttribute("employee", emp );
 		getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 	}

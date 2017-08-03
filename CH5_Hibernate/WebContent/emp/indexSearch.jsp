@@ -9,6 +9,11 @@
 </head>
 
 <body>
+<span style="float: right;"> <a
+			href="formSearch?start=${start-40>0?start-40:0 }">Back</a> || <a
+			href="formSearch?start=${start }">Next</a>
+		</span>
+		
 <h3>found ${size } employees</h3>
 	<form action="formSearch" method="post">
 		<table>
@@ -45,10 +50,7 @@
 		</table>
 
 		<input type="submit" value="Search" name="search" style="float: left;">
-		<span style="float: right;"> <a
-			href="form.xxx?start=${start-40>0?start-40:0 }">Back</a> || <a
-			href="form.xxx?start=${start }">Next</a>
-		</span>
+		
 	</form>
 </body>
 </html>

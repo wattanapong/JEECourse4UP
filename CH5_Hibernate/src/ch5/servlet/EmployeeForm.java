@@ -43,11 +43,15 @@ public class EmployeeForm extends HttpServlet {
 		try {
 			this.Connect();
 			
-			Query query = s.createQuery("from Employees");
-		
+			Query query = s.createQuery("select count(*) from Employees");
+			long size = (long) query.uniqueResult();
+			request.setAttribute("size", size );
+			
+			query = s.createQuery("from Employees");
+			
 			query.setFirstResult(start);
 			query.setMaxResults(max);
-			request.setAttribute("max", max );
+			
 			List employees = query.list();
 			request.setAttribute("employees", employees );
 			request.setAttribute("start", start );	
