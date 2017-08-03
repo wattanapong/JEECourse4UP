@@ -11,24 +11,16 @@ repositories {
  
 //Project dependencies
 dependencies {
-	compile 'org.springframework:spring-webmvc:4.0.6.RELEASE'
-	//compile 'org.springframework:spring-tx'
-	
+	compile 'org.springframework:spring-webmvc:4.0.6.RELEASE'	
 	 compile 'org.springframework.boot:spring-boot-starter-data-jpa:1.1.4.RELEASE'
 	 
 	compile 'org.hibernate:hibernate-core:3.3.2.GA'
-	// compile 'org.hibernate:hibernate-entitymanager:3.6.7.Final'
-   //compile 'org.hibernate:hibernate-validator:4.3.0.Final'
    compile 'org.hibernate:hibernate-annotations:3.3.1.GA'
-   //compile 'org.hibernate:hibernate-commons-annotations:3.3.0.ga'
-   //compile 'org.hibernate:hibernate-core:3.3.2.GA'
-   //compile 'javax.servlet:javax.servlet-api:3.1.0'
-   //compile 'org.slf4j:slf4j-simple:1.7.7'
    compile 'org.javassist:javassist:3.15.0-GA'
    compile 'mysql:mysql-connector-java:5.1.31'
    compile 'commons-dbcp:commons-dbcp:1.4'  
     compile 'javax.servlet:jstl:1.1.2'
     compile 'taglibs:standard:1.1.2'
-	//include in compile only, exclude in the war
+
 	providedCompile 'javax.servlet:servlet-api:2.5'
 }
